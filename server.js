@@ -3,6 +3,8 @@ const hbs = require('hbs');
 const yargs = require('yargs');
 const fs = require('fs');
 
+const port = process.env.PORT || 3000;
+
 const argv = yargs
     .options({
         n: {
@@ -65,6 +67,6 @@ app.get('/bad', (request, response) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('Server is up on 3000 port');
+app.listen(port, () => {
+    console.log(`Server is up o port ${port}`);
 });
